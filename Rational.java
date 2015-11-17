@@ -57,4 +57,20 @@ public class Rational {
 	    denom *= r.getNumer();
 	}
     }
+    
+    // Testing
+    public static void main(String[] args) {
+	Rational oof = new Rational();
+	System.out.println(oof);
+	System.out.println(oof.floatValue());
+	oof.setNumer(15); oof.setDenom(10);
+	System.out.println(oof.floatValue());
+	Rational bar = new Rational(1,3);
+        oof.multiply(bar);
+	System.out.println(oof);
+	oof.divide(bar);
+	System.out.println(oof);
+	oof.divide(bar);
+	System.out.println(oof);
+    }
 }
