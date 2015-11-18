@@ -11,11 +11,15 @@ public class Rational {
     }
     public Rational(int n, int d) {
 	this();
-	if (denom == 0) {
+	if (d == 0) {
 	    System.out.println("Please enter a valid denominator!");
+	    numer = 0;
+	    denom = 1;
 	}
-	numer = n;
-	denom = d;
+	else {
+	    numer = n;
+	    denom = d;
+	}
     }
 
     // Mutators and Accessors
@@ -72,5 +76,7 @@ public class Rational {
 	System.out.println(oof);
 	oof.divide(bar);
 	System.out.println(oof);
+	Rational baz = new Rational(7,0);
+	System.out.println(baz);
     }
 }
