@@ -1,8 +1,7 @@
 /* Team FeelTheBernieSanders -- Grace Stempel and Zicheng Zhen
-APCS1 pd10 
-HW33 -- Do You Even Add, Bro?
-2015-11-19*/
-
+   APCS1 pd10 
+   HW33 -- Do You Even Add, Bro?
+   2015-11-19 */
 
 // Rational Class
 public class Rational {
@@ -66,6 +65,21 @@ public class Rational {
 	    numer *= r.getDenom();
 	    denom *= r.getNumer();
 	}
+    }
+
+    public static int gcd(int a, int b) { // Euclidean Algorithm
+	while (a % b != 0) {
+	    int store = a;
+	    a = b;
+	    b = store % b;
+	}
+	return b;
+    }
+    public static void reduce(Rational r) {
+	int common = gcd(r.getNumer(), 
+			 r.getDenom());
+	r.setNumer(r.getNumer() / common);
+	r.setDenom(r.getDenom() / common);
     }
     
     // Testing
