@@ -1,3 +1,9 @@
+/* Team FeelTheBernieSanders -- Grace Stempel and Zicheng Zhen
+APCS1 pd10 
+HW33 -- Do You Even Add, Bro?
+2015-11-19*/
+
+
 // Rational Class
 public class Rational {
     // Instance Variables
