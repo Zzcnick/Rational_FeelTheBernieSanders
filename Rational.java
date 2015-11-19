@@ -95,6 +95,10 @@ public class Rational {
 	}
 	return b;
     }
+    private int gcd() { // Euclidean Algorithm, accesses self
+	return gcd(numer,denom);
+    }
+    
     // Reduce Methods - Simplifies The Rational
     public void reduce() {
 	int common = gcd(numer,denom);
