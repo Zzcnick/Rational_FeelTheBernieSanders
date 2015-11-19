@@ -1,2 +1,2 @@
 # Rational_FeelTheBernieSanders
-Rational class (APCS1)
+Rational class (APCS1) 
