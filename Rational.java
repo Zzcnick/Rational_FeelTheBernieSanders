@@ -1,7 +1,7 @@
-/* Team FeelTheBernieSanders -- Grace Stempel and Zicheng Zhen
+/* Team FeelTheBernieSanders -- Nick Ng & Zicheng Zhen
    APCS1 pd10 
-   HW33 -- Do You Even Add, Bro?
-   2015-11-19 */
+   HW37 -- Rational Equality / Implementing .equals()
+   2015-11-24 */
 
 // Rational Class
 public class Rational {
@@ -126,6 +126,16 @@ public class Rational {
 	if (numer * r.getDenom() > r.getNumer() * denom) {return 1;}
 	return -999;
     }
+
+    // equals - returns if two rationals are equal
+    public boolean equals(Object r) {
+	boolean same = this == r;
+	if (!same) {
+	    return (r instanceof Rational && // is it a Rational?
+		    this.compareTo((Rational)r) == 0);
+	}
+	return same;
+    }
     
     // Testing
     public static void main(String[] args) {
@@ -167,5 +177,10 @@ public class Rational {
 	foo.divide(new Rational(-5,3)); // foo = -54 / 5
 	System.out.println(foo);
 	System.out.println(foo.compareTo(new Rational(108,-10)));
+	Rational plis = new Rational(7,5);
+	Rational bruh = new Rational(98,70);
+	Rational whai = new Rational(98,69);
+	System.out.println(plis.equals(bruh)); // true
+	System.out.println(plis.equals(whai)); // false
     }
 }
