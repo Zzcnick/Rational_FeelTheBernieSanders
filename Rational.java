@@ -1,10 +1,10 @@
-/* Team FeelTheBernieSanders -- Nick Ng & Zicheng Zhen
+/* Team FeelTheBernieSanders -- Zicheng Zhen and Dennis Duman
    APCS1 pd10 
-   HW37 -- Rational Equality / Implementing .equals()
-   2015-11-24 */
+   HW41 -- Implementing Interfaces
+   2015-12-03 */
 
 // Rational Class
-public class Rational {
+public class Rational implements Comparable {
     // Instance Variables
     private int numer;
     private int denom;
@@ -125,6 +125,15 @@ public class Rational {
 	// a/b [r] < c/d [s] | ad > bc
 	if (numer * r.getDenom() > r.getNumer() * denom) {return 1;}
 	return -999;
+    }
+    public int compareTo(Object o) {
+	// Aliasing
+	if (this == o) {return 0;}
+	// Check Classes
+	if (!(o instanceof Rational)) {
+	    return compareTo((Rational)o);
+	}
+	return -1;
     }
 
     // equals - returns if two rationals are equal
